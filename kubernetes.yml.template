@@ -52,8 +52,7 @@ metadata:
   name: twitter-feed
   labels:
     app: twitter-feed
-#    commit: ${WERCKER_GIT_COMMIT}
-    commit: 1234
+    commit: ${WERCKER_GIT_COMMIT}
 
 spec:
   ports:
