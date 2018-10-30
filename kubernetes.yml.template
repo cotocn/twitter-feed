@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: twitter-feed
-        image: ${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: twitter-feed
-          image: ${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+          image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
 ---
 apiVersion: v1
 kind: Service
