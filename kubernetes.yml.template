@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: twitter-feed-v1
   labels:
-    commit: ${WERCKER_GIT_COMMIT}
+    commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
 spec:
   replicas: 2
   selector:
@@ -13,48 +13,31 @@ spec:
     metadata:
       labels:
         app: twitter-feed
-        commit: ${WERCKER_GIT_COMMIT}
+        commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
     spec:
       containers:
       - name: twitter-feed
-        image: demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+#        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        image: phx.ocir.io/oscjapac002/demo/twitter-feed:master-07e3e94baa67916337d0e6bec5b4a596e55880e3
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
-          containerPort: 
+          containerPort: 8080
           protocol: TCP
       imagePullSecrets:
         - name: wercker
-
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: twitter-feed
   labels:
     app: twitter-feed
-    commit: ${WERCKER_GIT_COMMIT}
 spec:
   ports:
   - port: 30000
     targetPort: 8080
   selector:
     app: twitter-feed
+    commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
   type: ClusterIP
-
-#    image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
-
-#apiVersion: extensions/v1beta1
-#kind: ReplicaSet
-#metadata:
-#  name: twitter-feed
-#spec:
-#  replicas: 1
-#  template:
-#    metadata:
-#      labels:
-#        app: twitter-feed
-#        commit: ${WERCKER_GIT_COMMIT}
-#    spec:
-#      containers:
-#        - name: twitter-feed
-#          image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
