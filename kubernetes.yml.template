@@ -25,7 +25,7 @@ spec:
           protocol: TCP
       imagePullSecrets:
         - name: wercker
----
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -40,7 +40,6 @@ spec:
   selector:
     app: twitter-feed
   type: ClusterIP
----
 
 #    image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
 
