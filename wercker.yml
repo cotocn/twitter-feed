@@ -19,7 +19,7 @@ push-release:
     - internal/docker-push:
         username: $REGISTRY_USERNAME
         password: $REGISTRY_PASSWORD
-        repository: $DOCKER_REPO
+        repository: phx.ocir.io/oscjapac002/demo/twitter-feed
         registry: $DOCKER_REGISTRY
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         working-dir: /pipeline/source
