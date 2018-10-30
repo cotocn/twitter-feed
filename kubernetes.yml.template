@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
       - name: twitter-feed
-#        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
-        image: phx.ocir.io/oscjapac002/demo/twitter-feed:v1
+        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+#        image: phx.ocir.io/oscjapac002/demo/twitter-feed:v1
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
@@ -39,7 +39,7 @@ spec:
 #    metadata:
 #      labels:
 #        app: twitter-feed
-#        version: "2"
+#        commit: ${WERCKER_GIT_COMMIT}
 #    spec:
 #      containers:
 #        - name: twitter-feed
@@ -52,8 +52,7 @@ metadata:
   name: twitter-feed
   labels:
     app: twitter-feed
-    commit: ${WERCKER_GIT_COMMIT}
-
+    commit: "${WERCKER_GIT_COMMIT}"
 spec:
   ports:
   - port: 30000
