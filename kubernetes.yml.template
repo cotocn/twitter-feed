@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: twitter-feed-v1
   labels:
-#    commit: ${WERCKER_GIT_COMMIT}
-    commit: 1234
+    commit: ${WERCKER_GIT_COMMIT}
+#    commit: 1234
 
 spec:
   replicas: 2
@@ -52,7 +52,7 @@ metadata:
   name: twitter-feed
   labels:
     app: twitter-feed
-    commit: "${WERCKER_GIT_COMMIT}"
+#    commit: "${WERCKER_GIT_COMMIT}"
 spec:
   ports:
   - port: 30000
