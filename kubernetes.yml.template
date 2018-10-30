@@ -26,21 +26,22 @@ spec:
       imagePullSecrets:
         - name: wercker
 
-apiVersion: extensions/v1beta1
-kind: ReplicaSet
-metadata:
-  name: twitter-feed
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: twitter-feed
-        version: "2"
-    spec:
-      containers:
-        - name: twitter-feed
-          image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+#apiVersion: extensions/v1beta1
+#kind: ReplicaSet
+#metadata:
+#  name: twitter-feed
+#spec:
+#  replicas: 1
+#  template:
+#    metadata:
+#      labels:
+#        app: twitter-feed
+#        version: "2"
+#    spec:
+#      containers:
+#        - name: twitter-feed
+#          image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+#-->
 
 apiVersion: v1
 kind: Service
