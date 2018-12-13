@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
       - name: twitter-feed
-#        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
-        image: phx.ocir.io/oscjapac002/demo/twitter-feed:master-07e3e94baa67916337d0e6bec5b4a596e55880e3
+        image: phx.ocir.io/oscjapac002/demo/twitter-feed:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+#        image: phx.ocir.io/oscjapac002/demo/twitter-feed:master-07e3e94baa67916337d0e6bec5b4a596e55880e3
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
@@ -52,5 +52,5 @@ spec:
     targetPort: 8080
   selector:
     app: twitter-feed
-    commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
+    color: blue
   type: ClusterIP
