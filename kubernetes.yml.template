@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: twitter-feed-v2
+  name: twitter-feed-v1
   labels:
     commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
 spec:
@@ -14,7 +14,7 @@ spec:
       labels:
         app: twitter-feed
         commit: 07e3e94baa67916337d0e6bec5b4a596e55880e3
-        color: green
+        color: blue
     spec:
       containers:
       - name: twitter-feed
